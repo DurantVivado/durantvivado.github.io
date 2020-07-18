@@ -66,8 +66,8 @@ netease_comment: false
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Coding is habit not labour, Go bruins，<br>蓦然回首，那人却在灯火阑珊处"
-sidebar-avatar: /img/avatar_durant.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: " Coding is habit not labour, Go bruins，<br>蓦然回首，那人却在灯火阑珊处,<br>Email: dqwh2020@g.ucla.com,<br>Wechat: DurantThorvald"
+sidebar-avatar: "/img/avatar_durant.jpg"      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
