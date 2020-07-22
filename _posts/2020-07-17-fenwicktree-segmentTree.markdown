@@ -4,6 +4,7 @@ title:      "线段树和树状数组"
 subtitle:   " \"Fenwick Tree & SegmentTree\""
 date:       2020-03-26 15:56:27
 author:     "Durant"
+latex: true
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
@@ -18,7 +19,7 @@ tags:
 
 ~~[跳过废话，直接看技术实现,对应LC315 ](#build)~~ 
 
-地中海的程序猿们研究数组，时候遇到这样一个问题: 有一个数组$S$从$0 - n-1$，现在要在$O(logn)$ 的时间复杂度内，搜索一个确定的值（或修改）$w$并且对区间 $[a,b]$ 求和。空间复杂度必须严格限制在$O(n)$.
+地中海的程序猿们研究数组，时候遇到这样一个问题: 有一个数组$$S$$从$0 - n-1$，现在要在$O(logn)$ 的时间复杂度内，搜索一个确定的值（或修改）$w$并且对区间 $[a,b]$ 求和。空间复杂度必须严格限制在$O(n)$.
 
 他们想到了二叉搜索树(BST)，对于平衡二叉树其插入和删除的时间复杂度都是$O(logn)$，因为树是类似于嵌套列表的思想，进而可以想到二叉堆，这是一种非嵌套列表，也可以实现$O(logn)$。于是有了下面这张图：
 ![FenwickTree](https://images.cnblogs.com/cnblogs_com/AKMer/1228599/o_TreeArray.jpg)
@@ -31,9 +32,9 @@ tags:
 
 > 返回参数转换为二进制后，最后一个1的位置所代表的数值。
 
- 比如34转换为二进制就是0010 0010, Lowbit(34)返回2. 程序上 我们可以用`((Not I)+1) AND I`, 比如NOT(0010 0010) = 1101 1101, 加1之后为 1101 1110，再与上I,为0000 0010(2)。
+比如34转换为二进制就是0010 0010, Lowbit(34)返回2. 程序上 我们可以用`((Not I)+1) AND I`, 比如NOT(0010 0010) = 1101 1101, 加1之后为 1101 1110，再与上I,为0000 0010(2)。
 
-``` C++
+```C++
 int lowbit(int x)
 {
     return x&(-x);
@@ -43,9 +44,9 @@ int lowbit(int x)
 
 我们定义一个数组BIT，用以维护A的前缀和，
 
-$$
+$
 BIT_i = \sum\limits_{j=i-lowbit(i)+1}^{i} A_{j}
-$$
+$
 
 ```C++
 void build()
@@ -87,7 +88,7 @@ int sum (int k)
     return ans;
 }
 ```
- 应用：求[逆序数](https://blog.csdn.net/cattycat/article/details/5640838)
+应用：求[逆序数](https://blog.csdn.net/cattycat/article/details/5640838)
 > 练习 [LC315. 计算右侧小于当前元素的个数](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/)
 
 
@@ -137,7 +138,7 @@ inline void build(SegmentNode *self, int l, int r)
 
 ## 2. 单点修改
 
-### 从根节点开始,以递归的方式不断更新sum值，直到叶子节点即`区间长度为1`，每个区间的sum值等于左子区间的sum值，加上右子区间的sum值。
+从根节点开始,以递归的方式不断更新sum值，直到叶子节点即`区间长度为1`，每个区间的sum值等于左子区间的sum值，加上右子区间的sum值。
 
 ```C++
     inline void add(SegmentNode *self, int pos, int k)
@@ -175,7 +176,7 @@ inline void build(SegmentNode *self, int l, int r)
 ```
 ## 4. 延迟标记
 
-### 对于区间修改，这里会遇到一个问题：为了使所有sum值都保持正确，每一次插入操作可能要更新$O(N)$个sum值，从而使时间复杂度退化为$O(N)$。所以就有了Lazytag，如果一个节点有延迟标记，那么表明这个节点已经被修改过了。
+对于区间修改，这里会遇到一个问题：为了使所有sum值都保持正确，每一次插入操作可能要更新$O(N)$个sum值，从而使时间复杂度退化为$O(N)$。所以就有了Lazytag，如果一个节点有延迟标记，那么表明这个节点已经被修改过了。
 
 ```C++
 void add_tag(SegmentNode *self,int l,int r,int v) {
