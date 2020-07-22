@@ -23,7 +23,7 @@ tags:
 
 他们想到了二叉搜索树(BST)，对于平衡二叉树其插入和删除的时间复杂度都是$$O(logn)$$，因为树是类似于嵌套列表的思想，进而可以想到二叉堆，这是一种非嵌套列表，也可以实现$$O(logn)$$。于是有了下面这张图：
 
-![FenwickTree](img/o_TreeArray.jpg)
+![FenwickTree](https://images.cnblogs.com/cnblogs_com/AKMer/1228599/o_TreeArray.jpg)
 
 > 解释一下，编号为$$x$$的节点上统计着$$[x-lowbit(x)+1,x]$$这一段区间的信息，$$x$$的父亲就是$$x+lowbit(x)$$,我们要维护数组$$C$$上的信息，存储在数组$$A$$中。
 
