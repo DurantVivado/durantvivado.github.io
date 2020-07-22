@@ -1,0 +1,335 @@
+I"k=<blockquote>
+  <p>“树状数组和线段树都是用于维护数列信息的数据结构，支持单点/区间修改，单点/区间询问信息。以增加权值与询问区间权值和为例，其余的信息需要维护也都类似。时间复杂度均为<strong><em>O(logn)</em></strong>。 ”</p>
+</blockquote>
+
+<h1 id="i-树状数组">I. 树状数组</h1>
+
+<h2 id="fenwick-tree">Fenwick Tree</h2>
+
+<p><del><a href="#build">跳过废话，直接看技术实现,对应LC315 </a></del></p>
+
+<h3 id="地中海的程序猿们研究数组时候遇到这样一个问题-有一个数组s从0---n-1现在要在ologn-的时间复杂度内搜索一个确定的值或修改w并且对区间-ab-求和空间复杂度必须严格限制在on">地中海的程序猿们研究数组，时候遇到这样一个问题: 有一个数组$S$从$0 - n-1$，现在要在$O(logn)$ 的时间复杂度内，搜索一个确定的值（或修改）$w$并且对区间 $[a,b]$ 求和。空间复杂度必须严格限制在$O(n)$.</h3>
+
+<h3 id="他们想到了二叉搜索树bst对于平衡二叉树其插入和删除的时间复杂度都是ologn因为树是类似于嵌套列表的思想进而可以想到二叉堆这是一种非嵌套列表也可以实现ologn于是有了下面这张图">他们想到了二叉搜索树(BST)，对于平衡二叉树其插入和删除的时间复杂度都是$O(logn)$，因为树是类似于嵌套列表的思想，进而可以想到二叉堆，这是一种非嵌套列表，也可以实现$O(logn)$。于是有了下面这张图：</h3>
+<p><img src="https://images.cnblogs.com/cnblogs_com/AKMer/1228599/o_TreeArray.jpg" alt="FenwickTree" /></p>
+
+<blockquote>
+  <h3 id="解释一下编号为x的节点上统计着x-lowbitx1x这一段区间的信息x的父亲就是xlowbitx我们要维护数组c上的信息存储在数组a中">解释一下，编号为$x$的节点上统计着$[x-lowbit(x)+1,x]$这一段区间的信息，$x$的父亲就是$x+lowbit(x)$,我们要维护数组$C$上的信息，存储在数组$A$中。</h3>
+</blockquote>
+
+<h3 id="按照peter-m-fenwick的说法正如所有的整数都可以表示成2的幂和我们也可以把一串序列表示成一系列子序列的和采用这个想法我们可将一个前缀和划分成多个子序列的和而划分的方法与数的2的幂和具有极其相似的方式一方面子序列的个数是其二进制表示中1的个数另一方面子序列代表的fi的个数也是2的幂">按照Peter M. Fenwick的说法，正如所有的整数都可以表示成2的幂和，我们也可以把一串序列表示成一系列子序列的和。采用这个想法，我们可将一个前缀和划分成多个子序列的和，而划分的方法与数的2的幂和具有极其相似的方式。一方面，子序列的个数是其二进制表示中1的个数，另一方面，子序列代表的$f[i]$的个数也是2的幂。</h3>
+
+<h2 id="1-lowbit函数">1. Lowbit函数</h2>
+
+<blockquote>
+  <p>返回参数转换为二进制后，最后一个1的位置所代表的数值。</p>
+</blockquote>
+
+<h3 id="比如34转换为二进制就是0010-0010-lowbit34返回2-程序上-我们可以用not-i1-and-i-比如not0010-0010--1101-1101-加1之后为-1101-1110再与上i为0000-00102">比如34转换为二进制就是0010 0010, Lowbit(34)返回2. 程序上 我们可以用<code class="language-plaintext highlighter-rouge">((Not I)+1) AND I</code>, 比如NOT(0010 0010) = 1101 1101, 加1之后为 1101 1110，再与上I,为0000 0010(2)。</h3>
+
+<pre><code class="language-C++">int lowbit(int x)
+{
+    return x&amp;(-x);
+}
+</code></pre>
+<h2 id="2-新建数组">2. 新建数组</h2>
+
+<h3 id="我们定义一个数组bit用以维护a的前缀和">我们定义一个数组BIT，用以维护A的前缀和，</h3>
+
+<p>$
+BIT_i = \sum\limits_{j=i-lowbit(i)+1}^{i} A_{j}
+$</p>
+
+<pre><code class="language-C++">void build()
+{ 
+    for (int i = 1; i &lt;= MAX_N; i++)
+    {
+        BIT[i] = A[i - 1];
+        for (int j = i - 2; j &gt;= i - lowbit(i); j--)
+            BIT[i] += A[j];
+    }
+}
+</code></pre>
+
+<h2 id="3-修改">3. 修改</h2>
+
+<p>假设现在要在$A[i]$的值增加$\delta$, 那么需要将$BIT$在所有含$A[i]$的区间都加上一个数，</p>
+<pre><code class="language-C++">void add(int k, int w)
+    {// 在下标k、加上w
+        for(int j = k; j&lt; tr.size();j+=low_bit(j)) tr[j]+=w;
+    }
+
+</code></pre>
+
+<h2 id="4-区间求和">4. 区间求和</h2>
+
+<h3 id="假设我们需要计算sumlimits_i1ka_i的值">假设我们需要计算$\sum\limits_{i=1}^kA_i$的值。</h3>
+<ol>
+  <li>首先，将$ans$初始化为$k$</li>
+  <li>将$ans$的值加上$BIT[i]$</li>
+  <li>将$i$的值减去$Lowbit(i)$</li>
+  <li>重复2 . 3 步骤直到$i$的值变为0.</li>
+</ol>
+
+<pre><code class="language-C++">int sum (int k)
+{
+    int ans = 0;
+    for (int i = k; i &gt; 0; i -= lowbit(i))
+        ans += BIT[i];
+    return ans;
+}
+</code></pre>
+<h3 id="应用求逆序数">应用：求<a href="https://blog.csdn.net/cattycat/article/details/5640838">逆序数</a></h3>
+<blockquote>
+  <p>练习 <a href="https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/">LC315. 计算右侧小于当前元素的个数</a></p>
+</blockquote>
+
+<h1 id="ii-线段树">II. 线段树</h1>
+<h2 id="segment-tree">Segment Tree</h2>
+
+<blockquote>
+  <h3 id="使用线段树可以快速查找某一个节点在若干线段中出现的次数时间复杂度为ologn而未优化的空间复杂度为2n一般要开4n的数组防止越界">使用线段树可以快速查找某一个节点在若干线段中出现的次数，时间复杂度为$O(logN)，而未优化的空间复杂度为$2N$，一般要开$4N$的数组防止越界。</h3>
+</blockquote>
+
+<p><img src="https://bkimg.cdn.bcebos.com/pic/bd3eb13533fa828bcb5fe85ffe1f4134970a5a09?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U5Mg==,g_7,xp_5,yp_5" alt="线段树" /></p>
+
+<h3 id="除了叶子节点外对于ab线段节点其有两个子节点-左子节点aab2和右子节点ab21b由于线段树在程序竞赛中被广泛应用这种结构被acmer和oier戏谑为必须掌握的数据结构一般地我们先定义一个线段树节点结构体">除了叶子节点外，对于$[a,b]$线段节点，其有两个子节点, 左子节点$[a,(a+b)/2]$和右子节点$[(a+b)/2+1,b]$。由于线段树在程序竞赛中被广泛应用，这种结构被$ACMer$和$OIer$戏谑为必须掌握的数据结构。一般地，我们先定义一个线段树节点结构体:</h3>
+
+<pre><code class="language-C++">struct SegmentNode
+{
+    int start;//线段左节点
+    int end;//线段右节点
+    int sum;//线段对应的和
+    int lazytag;//懒标记
+    SegmentNode *left;
+    SegmentNode *right;
+    SegmentNode():start(0),end(0),sum(0){}
+};
+</code></pre>
+<h3 id="请务必熟悉理解上述结构">请务必熟悉理解<code class="language-plaintext highlighter-rouge">上述</code>结构！</h3>
+
+<h2 id="1-建立树">1. 建立树</h2>
+
+<h3 id="我们对区间lr建立线段树是一个自上而下过程">我们对区间$[l,r]$建立线段树，是一个自上而下过程。</h3>
+
+<pre><code class="language-C++">inline void build(SegmentNode *self, int l, int r)
+    {
+        if(l&gt;r) return;
+        self-&gt;start = l;self-&gt;end = r;
+        if(l==r)
+        {
+            return;
+        }
+        int mid = (l+r)&gt;&gt;1;
+        self-&gt;left = new SegmentNode();
+        build(self-&gt;left,l,mid);
+        self-&gt;right = new SegmentNode();
+        build(self-&gt;right,mid+1,r);
+    }
+</code></pre>
+
+<h2 id="2-单点修改">2. 单点修改</h2>
+
+<h3 id="从根节点开始以递归的方式不断更新sum值直到叶子节点即区间长度为1每个区间的sum值等于左子区间的sum值加上右子区间的sum值">从根节点开始,以递归的方式不断更新sum值，直到叶子节点即<code class="language-plaintext highlighter-rouge">区间长度为1</code>，每个区间的sum值等于左子区间的sum值，加上右子区间的sum值。</h3>
+
+<pre><code class="language-C++">    inline void add(SegmentNode *self, int pos, int k)
+    {
+        if(pos&lt;self-&gt;start||pos&gt;self-&gt;end) return;
+        if(self-&gt;start == self-&gt;end)
+        {
+            self-&gt;sum += k;
+            return; 
+        }
+        if(self-&gt;right-&gt;start&gt;pos) add(self-&gt;left,pos,k);
+        else add(self-&gt;right,pos,k);
+        self-&gt;sum = self-&gt;left-&gt;sum + self-&gt;right-&gt;sum;
+    }
+</code></pre>
+
+<h2 id="3-区间查询">3. 区间查询</h2>
+
+<ul>
+  <li>第一种情况是当前的区间范围完全在$[l,r]$内，这个时候把当前区间的$sum$值返回即可，</li>
+  <li>第二张情况是当前节点的<code class="language-plaintext highlighter-rouge">左子节点</code>的<code class="language-plaintext highlighter-rouge">右端点</code>和$[l,r]$有交集。这个时候就搜索左子节点。</li>
+  <li>第三张情况是当前节点的<code class="language-plaintext highlighter-rouge">右子节点</code>的<code class="language-plaintext highlighter-rouge">左端点</code>和$[l,r]$有交集。这个时候就搜索右子节点。
+    <pre><code class="language-C++">  inline int search(SegmentNode *self, int i,int j)
+  {//这里的i,j分别代表要搜索的区间
+      if(i&gt;j) return 0;
+      if(i&lt;=self-&gt;start &amp;&amp; self-&gt;end&lt;=j)
+      {
+          return self-&gt;sum; 
+      }
+      int s = 0;
+      if(self-&gt;left-&gt;end&gt;=i) s+=search(self-&gt;left,i,j);
+      if(self-&gt;right-&gt;start&lt;=j) s+=search(self-&gt;right,i,j);
+      return s;
+  }
+</code></pre>
+    <h2 id="4-延迟标记">4. 延迟标记</h2>
+  </li>
+</ul>
+
+<h3 id="对于区间修改这里会遇到一个问题为了使所有sum值都保持正确每一次插入操作可能要更新on个sum值从而使时间复杂度退化为on所以就有了lazytag如果一个节点有延迟标记那么表明这个节点已经被修改过了">对于区间修改，这里会遇到一个问题：为了使所有sum值都保持正确，每一次插入操作可能要更新$O(N)$个sum值，从而使时间复杂度退化为$O(N)$。所以就有了Lazytag，如果一个节点有延迟标记，那么表明这个节点已经被修改过了。</h3>
+
+<pre><code class="language-C++">void add_tag(SegmentNode *self,int l,int r,int v) {
+    self-&gt;sum += (r-l+1)*v;self-&gt;lazytag+=v;//标记只对儿子有影响，自己在打标记的同时一起把统计信息更改了。
+}
+
+void push_down(SegmentNode *self,int l,int r) {
+    int mid=(l+r)&gt;&gt;1;
+    add_tag(self-&gt;left,l,mid,self-&gt;lazytag);
+    add_tag(self-&gt;right,mid+1,r,self-&gt;lazytag);
+    self-&gt;lazytag = 0;//把当前标记分别传给两个儿子然后清空
+}
+
+inline int search(SegmentNode *self, int l, int r,int v) {//[l,r]为当前区间,[L,R]为要修改的区间
+    if(l&lt;=self-&gt;start &amp;&amp; self-&gt;end&lt;=r) {
+        add_tag(self,l,r,v);//打标记
+        return;
+	}
+    int s = 0;
+    push_down(self,l,r);//下传标记
+    if(self-&gt;left-&gt;end&gt;=i) s+=search(self-&gt;left,i,j,v);
+    if(self-&gt;right-&gt;start&lt;=j) s+=search(self-&gt;right,i,j,v);
+    return s;
+}
+</code></pre>
+
+<h1 id="iii-树状数组和线段树比较">III. 树状数组和线段树比较</h1>
+<p>|数据结构|时间复杂度|空间复杂度|适用特点|
+|:—:|:—:|:—:|:—:|
+|线段树|$O(logN)$|O(N)|-|
+|树状数组|$O(logN)$|O(N)|空间复杂度略低，容易扩展到多维，适用范围较线段树小</p>
+
+<p id="build"></p>
+
+<h1 id="c代码实现对应lc315">C++代码实现(对应LC315)</h1>
+
+<pre><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+#include &lt;unordered_map&gt;
+using namespace std;
+struct SegmentNode
+{
+    int start;
+    int end;
+    int sum;
+    SegmentNode *left;
+    SegmentNode *right;
+    SegmentNode():start(0),end(0),sum(0){}
+};
+class Solution{
+    public:
+//---------------------------Segment tree solution----------------------------
+    inline void build(SegmentNode *self, int l, int r)
+    {
+        if(l&gt;r) return;
+        self-&gt;start = l;self-&gt;end = r;
+        if(l==r)
+        {
+            // self-&gt;sum = l;
+            return;
+        }
+        int mid = (l+r)&gt;&gt;1;
+        self-&gt;left = new SegmentNode();
+        build(self-&gt;left,l,mid);
+        self-&gt;right = new SegmentNode();
+        build(self-&gt;right,mid+1,r);
+        // self-&gt;sum = self-&gt;left-&gt;sum + self-&gt;right-&gt;sum;
+    }
+    inline void add(SegmentNode *self, int pos, int k)
+    {
+        if(pos&lt;self-&gt;start||pos&gt;self-&gt;end) return;
+        if(self-&gt;start == self-&gt;end)
+        {
+            self-&gt;sum += k;
+            return; 
+        }
+        if(self-&gt;right-&gt;start&gt;pos) add(self-&gt;left,pos,k);
+        else add(self-&gt;right,pos,k);
+        self-&gt;sum = self-&gt;left-&gt;sum + self-&gt;right-&gt;sum;
+    }
+    inline int search(SegmentNode *self, int i,int j)
+    {
+        if(i&gt;j) return 0;
+        if(i&lt;=self-&gt;start &amp;&amp; self-&gt;end&lt;=j)
+        {
+            return self-&gt;sum; 
+        }
+        int s = 0;
+        if(self-&gt;left-&gt;end&gt;=i) s+=search(self-&gt;left,i,j);
+        if(self-&gt;right-&gt;start&lt;=j) s+=search(self-&gt;right,i,j);
+        return s;
+    }
+    vector&lt;int&gt; countSmaller_SegmentTree(vector&lt;int&gt;&amp;nums)
+    {
+        if(!nums.size()) return nums;
+        SegmentNode *root = new SegmentNode();
+        //find the min and max val in nums
+        int min_val = INT_MAX, max_val = INT_MIN;
+        for(auto &amp;c:nums){min_val=min(min_val,c);max_val = max(max_val,c);}
+        build(root,min_val,max_val);
+        vector&lt;int&gt; res(nums.size());
+        // for(auto &amp;c:nums) 
+        //     add(root,c,1);//All sub interval adds 1
+        for(int i = nums.size()-1; i&gt;=0;i--)
+        {
+            add(root,nums[i],1);
+            res[i] = search(root,min_val,nums[i]-1);
+        }
+        return res;
+    }
+//------------------------------Fenwick Tree Solution----------------------------------
+//Due to the uncertainty of scale of data, we discretize the array
+    int n;
+    vector&lt;int&gt; tr;
+    int low_bit(int x)
+    {//pow(2,x)
+        return (x&amp;(-x));
+    }
+    int sum(int k)
+    {
+        int res = 0;
+        for(int j = k; j&gt;0; j-=low_bit(j)) res+=tr[j];
+        return res;
+    }
+   
+    void add(int k, int w)
+    {// add k to node w
+        for(int j = k; j&lt; tr.size();j+=low_bit(j)) tr[j]+=w;
+    }
+    vector&lt;int&gt; countSmaller_Fenwick(vector&lt;int&gt;&amp;nums)
+    {
+        if(!nums.size()) return {};
+        int n = nums.size();
+        vector&lt;int&gt; res(n);
+        //First, we discretize the vector and delete the repeated nums
+        vector&lt;int&gt; tmp = nums;
+        sort(tmp.begin(),tmp.end());
+        auto c = unique(tmp.begin(),tmp.end());
+        tmp.erase(c,tmp.end());
+        int new_len = c - tmp.begin();
+        // we define a unordered-map to count the number of tmp
+        unordered_map&lt;int,int&gt; ump;
+        tr = vector&lt;int&gt;(new_len + 1);//redefine the tr to (new_len+1) default value
+        int count = 1;
+        for(int i = 0;i&lt;new_len;i++)
+            ump[tmp[i]] = count++;//redefine the discretized values into serialized values using hashmap
+        //we build the Fenwick tree and do summation and addition
+        for(int k = nums.size()-1;k&gt;=0;k--)
+        {
+            count = ump[nums[k]];// count of number
+            res[k] = sum(count-1);
+            add(count,1);
+        }
+        return res;
+
+    }
+};
+</code></pre>
+
+<blockquote>
+  <p>感谢！有任何问题请在评论区提出，笔者看到会及时回答！</p>
+</blockquote>
+:ET
