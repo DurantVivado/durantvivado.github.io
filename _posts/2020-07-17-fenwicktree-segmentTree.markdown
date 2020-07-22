@@ -49,7 +49,7 @@ $$
 BIT_i = \sum\limits_{j=i-lowbit(i)+1}^{i} A_{j}
 $$
 
-```C++
+```cpp
 void build()
 { 
     for (int i = 1; i <= MAX_N; i++)
@@ -64,7 +64,7 @@ void build()
 ## 3. 修改
 
 假设现在要在$$A[i]$$的值增加$$\delta$$, 那么需要将$$BIT$$在所有含$$A[i]$$的区间都加上一个数，
-```C++
+```cpp
 void add(int k, int w)
     {// 在下标k、加上w
         for(int j = k; j< tr.size();j+=low_bit(j)) tr[j]+=w;
@@ -80,7 +80,7 @@ void add(int k, int w)
 3. 将$$i$$的值减去$$Lowbit(i)$$
 4. 重复2 . 3 步骤直到$$i$$的值变为0.
 
-```C++
+```cpp
 int sum (int k)
 {
     int ans = 0;
@@ -102,7 +102,7 @@ int sum (int k)
 
 除了叶子节点外，对于$$[a,b]$$线段节点，其有两个子节点, 左子节点$$[a,(a+b)/2]$$和右子节点$$[(a+b)/2+1,b]$$。由于线段树在程序竞赛中被广泛应用，这种结构被$$ACMer$$和$$OIer$$戏谑为必须掌握的数据结构。一般地，我们先定义一个线段树节点结构体:
 
-```C++
+```cpp
 struct SegmentNode
 {
     int start;//线段左节点
@@ -120,7 +120,7 @@ struct SegmentNode
 
 我们对区间$$[l,r]$$建立线段树，是一个自上而下过程。
 
-```C++
+```cpp
 inline void build(SegmentNode *self, int l, int r)
     {
         if(l>r) return;
@@ -141,7 +141,7 @@ inline void build(SegmentNode *self, int l, int r)
 
 从根节点开始,以递归的方式不断更新sum值，直到叶子节点即`区间长度为1`，每个区间的sum值等于左子区间的sum值，加上右子区间的sum值。
 
-```C++
+```cpp
     inline void add(SegmentNode *self, int pos, int k)
     {
         if(pos<self->start||pos>self->end) return;
@@ -161,7 +161,7 @@ inline void build(SegmentNode *self, int l, int r)
 * 第一种情况是当前的区间范围完全在$$[l,r]$$内，这个时候把当前区间的$$sum$$值返回即可，
 * 第二张情况是当前节点的`左子节点`的`右端点`和$$[l,r]$$有交集。这个时候就搜索左子节点。
 * 第三张情况是当前节点的`右子节点`的`左端点`和$$[l,r]$$有交集。这个时候就搜索右子节点。
-```C++
+```cpp
     inline int search(SegmentNode *self, int i,int j)
     {//这里的i,j分别代表要搜索的区间
         if(i>j) return 0;
@@ -179,7 +179,7 @@ inline void build(SegmentNode *self, int l, int r)
 
 对于区间修改，这里会遇到一个问题：为了使所有sum值都保持正确，每一次插入操作可能要更新$$O(N)$$个sum值，从而使时间复杂度退化为$$O(N)$$。所以就有了Lazytag，如果一个节点有延迟标记，那么表明这个节点已经被修改过了。
 
-```C++
+```cpp
 void add_tag(SegmentNode *self,int l,int r,int v) {
     self->sum += (r-l+1)*v;self->lazytag+=v;//标记只对儿子有影响，自己在打标记的同时一起把统计信息更改了。
 }
@@ -213,9 +213,9 @@ inline int search(SegmentNode *self, int l, int r,int v) {//[l,r]为当前区间
 
 <p id = "build"></p>
 
-# C++代码实现(对应LC315)
+# cpp代码实现(对应LC315)
 
-```C++
+```cpp
 #include <iostream>
 #include <vector>
 #include <algorithm>

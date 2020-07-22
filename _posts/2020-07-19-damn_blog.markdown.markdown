@@ -28,15 +28,17 @@ tags:
 # Solution
 
 1. 将 `_config.yml`文件的`anchorjs`改为`false`。这主要是跳转用的，不需要。
-2. 
+2.  采用网络图片，刷新几次就好了~~**玄学**~~
 
 3. Kramdown主要是`$$ ... $$`表示公式区域，它会自动渲染为mathjax标签。之前用VS code自带的markdown math 是以`$ ... $`。疏忽了。
 在`_include`的`head.html`加入一句话，在post文件前加`latex:true`即可。
 
-``` html
+``` 
 {% if page.latex == true %}
     <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML">
     </script>
 {% endif %}
 ``` 
+
+4. 之前以为是C++，改成cpp就能高亮了，呃
     
