@@ -22,7 +22,8 @@ tags:
 地中海的程序猿们研究数组，时候遇到这样一个问题: 有一个数组$$S$$从$$0 - n-1$$，现在要在$$O(logn)$$ 的时间复杂度内，搜索一个确定的值（或修改）$$w$$并且对区间 $$[a,b]$$ 求和。空间复杂度必须严格限制在$$O(n)$$.
 
 他们想到了二叉搜索树(BST)，对于平衡二叉树其插入和删除的时间复杂度都是$$O(logn)$$，因为树是类似于嵌套列表的思想，进而可以想到二叉堆，这是一种非嵌套列表，也可以实现$$O(logn)$$。于是有了下面这张图：
-![FenwickTree](https://images.cnblogs.com/cnblogs_com/AKMer/1228599/o_TreeArray.jpg)
+
+![FenwickTree](img/o_TreeArray.jpg)
 
 > 解释一下，编号为$$x$$的节点上统计着$$[x-lowbit(x)+1,x]$$这一段区间的信息，$$x$$的父亲就是$$x+lowbit(x)$$,我们要维护数组$$C$$上的信息，存储在数组$$A$$中。
 
@@ -95,7 +96,7 @@ int sum (int k)
 # II. 线段树
 ## Segment Tree
 
-> 使用线段树可以快速查找某一个节点在若干线段中出现的次数，时间复杂度为$$O(logN)，而未优化的空间复杂度为$$2N$$，一般要开$$4N$$的数组防止越界。
+> 使用线段树可以快速查找某一个节点在若干线段中出现的次数，时间复杂度为$$O(logN)$$，而未优化的空间复杂度为$$2N$$，一般要开$$4N$$的数组防止越界。
 
 ![线段树](https://bkimg.cdn.bcebos.com/pic/bd3eb13533fa828bcb5fe85ffe1f4134970a5a09?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U5Mg==,g_7,xp_5,yp_5)
 

@@ -19,6 +19,7 @@ tags:
 1. 标签前面有`#`，而且是有标签的那种
 2. 图片不显示
 3. 公式不显示
+4. 语法没高亮，没行号 
 
 这叫我如何能忍。是可忍，孰不可忍。
 
@@ -32,7 +33,7 @@ tags:
 3. Kramdown主要是`$$ ... $$`表示公式区域，它会自动渲染为mathjax标签。之前用VS code自带的markdown math 是以`$ ... $`。疏忽了。
 在`_include`的`head.html`加入一句话，在post文件前加`latex:true`即可。
 
-```html
+``` html
 {% if page.latex == true %}
     <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML">
     </script>
