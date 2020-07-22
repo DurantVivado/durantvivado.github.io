@@ -8,7 +8,11 @@
     <meta name="theme-color" content="{{ site.chrome-tab-theme-color }}">
     
     <title>{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}</title>
-
+    <!--7/22 edited by Durant-->>
+    {% if page.latex == true %}
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML">
+    </script>
+    {% endif %}
     <!-- Web App Manifest -->
     <link rel="manifest" href="{{ site.baseurl }}/pwa/manifest.json">
 
