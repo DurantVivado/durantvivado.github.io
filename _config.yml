@@ -36,9 +36,9 @@ anchorjs: true                          # if you want to customize anchor. check
 # replace redcarpet to kramdown,
 # although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
 # document: http://jekyllrb.com/docs/configuration/#kramdown
-markdown:  redcarpet #kramdown
-#kramdown:
-# input: GFM                            # use Github Flavored Markdown !important
+markdown:  kramdown
+kramdown:
+ input: GFM                            # use Github Flavored Markdown !important
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
