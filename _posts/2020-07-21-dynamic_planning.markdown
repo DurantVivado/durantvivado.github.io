@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      "动态规划-自己一点理解"
+title:      "动态规划-自己的一点理解"
 subtitle:   " \"Dynamic Programming\""
-date:       2020-03-26 15:56:27
+date:       2020-07-21 15:56:27
 author:     "Durant"
 latex: true
 header-img: "img/post-bg-alitrip.jpg"
