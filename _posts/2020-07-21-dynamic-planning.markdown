@@ -38,6 +38,7 @@ tags:
 $$ 
 dp[i] = dp[i-1] + dp[i-2];
 $$
+
 边界条件: $$dp[0] = 1, dp[1]=1$$
 
 ## 746. [使用最小花费爬楼梯](https://leetcode-cn.com/problems/min-cost-climbing-stairs/)
@@ -47,6 +48,7 @@ $$
 $$ 
 dp[i] = min{dp[i-1] + cost[i-1], dp[i-2] + cost[i-1]};
 $$
+
 边界条件: $$dp[0] = 0, dp[1]=0$$
 
 **总结，这两题能这么做是因为，它们相邻两项的间距是恒定的要么为1，要么为2.**
@@ -61,6 +63,7 @@ $$
 $$ 
 dp[i][j] = min(dp[i][j-1], dp[i-1][j])+grid[i][j];
 $$
+
 边界条件: 
 $$
 dp[0][i] = dp[0][i-1] + grid[0][i](0 \le{i}\le{m}), 
@@ -79,6 +82,7 @@ $$
 $$ 
 dp[i][j] = dp[i][j-1]+ dp[i-1][j];
 $$
+
 边界条件: 
 $$
 dp[0][i] = 1(0 \le{i}\le{m}), 
