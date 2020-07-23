@@ -215,7 +215,7 @@ inline int search(SegmentNode *self, int l, int r,int v) {//[l,r]为当前区间
 
 # cpp代码实现(对应LC315)
 
-```cpp
+``` cpp
 #include <iostream>
 #include <vector>
 #include <algorithm>
