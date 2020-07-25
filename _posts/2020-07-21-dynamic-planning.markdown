@@ -91,6 +91,34 @@ $$
 dp[j][0] = 1(0 \le{j}\le{n})
 $$
 
+## 63. [不同路径2](https://leetcode-cn.com/problems/unique-paths-ii/)
+
+用$dp[i][j]$表示从`原点`到$(i,j)$的路径总数，只不过这题玩了一点花样，加入障碍物，和`62`异曲同工。上一题我们把边界，包括上边界和左边界，都设为1。这一题，我们想如果遇到障碍物在$(i,j)$，那么肯定$dp[i][j]=0$对吧？然后对于边界，一旦$dp[0][j]==0或dp[i][0]==0$表明，之后的全到不了，因为上左边界分别只有一条路径。
+
+
+$$ dp[i][j]=\left\{
+\begin{array}{lcl}
+dp[i-1][j]+dp[i][j-1],       &      & {obstacleGrid[i][j]!=1}\\
+0,     &      & {obstacleGrid[i][j]==1}\\
+\end{array} \right. $$
+
+
+>边界
+$$
+dp[0][j] =\left\{ 
+\begin{array}{lcr}
+ 0, {dp[0][j-1]==0||obstacleGrid[0][j]==0}\\
+1, {dp[0][j-1]!=0}\\
+\end{array} \right.\\
+,
+\\
+dp[i][0] =\left\{ 
+\begin{array}{lcr}
+ 0, {dp[i-1][0]==0||obstacleGrid[i][0]==0}\\
+1, {dp[i-1][0]!=0}\\
+\end{array} \right.
+$$
+
 **总结，因为路径问题只能向下或向右走和爬楼梯的只能走一步或者两步都是异曲同工的，把状态转移方程和边界条件想出来有助于快速解决问题**
 
 ---
