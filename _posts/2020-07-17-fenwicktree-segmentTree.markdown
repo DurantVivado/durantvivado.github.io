@@ -208,12 +208,103 @@ inline int search(SegmentNode *self, int l, int r,int v) {//[l,r]为当前区间
 |数据结构|时间复杂度|空间复杂度|适用特点|
 |:---:|:---:|:---:|:---:|
 |线段树|$$O(logN)$$|O(N)|-|
-|树状数组|$$O(logN)$$|O(N)|空间复杂度略低，容易扩展到多维，适用范围较线段树小
+|树状数组|$$O(logN)$$|O(N)|空间复杂度略低，容易扩展到多维，适用范围较线段树小|
+|
 
 
-<p id = "build"></p>
 
-# cpp代码实现(对应LC315)
+
+
+
+
+---
+
+> 下面看一些经典题目吧
+
+# 53. [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/solution/)
+
+其实这题除了用动态规划，还可以用线段树做。
+
+**这个分治方法类似于「线段树求解 LCIS 问题」的 pushUp 操作**。 当然，如果读者有兴趣的话，推荐看一看线段树区间合并法解决 `多次询问` 的「区间最长连续上升序列问题」和「区间最大子段和问题」，还是非常有趣的。
+
+我们定义一个操作`get(a,l,r)`表示查询a序列$$[l,r]区$$间内的最大字段和。对于一个区间，我们取$$m = [\frac{l+r}{2}]$$,然后`逐层递归`。最关键的问题是：
+
+* 我们要维护区间什么信息？
+
+* 我们如何合并这些信息？
+
+  
+
+  对于一个区间$$[l,r]$$，`lSum`表示$$[l,r]$$以$$l$$为左端点的最大子段和；`rSum`表示$$[l,r]$$以$$r$$为右端点的最大子段和，`mSum`表示$$[l,r]$$
+
+  内的最大子段和。`iSum`表示$$[l,r]$$的区间和。
+
+  * `iSum`是左右区间的子段和的和。
+  * 对于 $$[l, r]$$ 的 `lSum`，存在两种可能，它要么等于「左子区间」的 `lSum`，要么等于「左子区间」的 `iSum` 加上「右子区间」的 `lSum`，二者取大。
+  * 对于 $$[l, r]$$ 的 `rSum`，存在两种可能，它要么等于「右子区间」的 `rSum`，要么等于「右子区间」的 `iSum` 加上「左子区间」的 `rSum`，二者取大。
+  * 对于`mSum`，存在三种可能，要么完全在左区间，要么完全在中间，要么两边都有，我想你已经猜到了，就是左区间的`rSum`加上右区间的`lSum`。
+
+好的已经可以开始写代码了
+
+---
+
+```C++
+struct Status
+    {
+        int lSum, rSum, mSum, iSum;
+        // 分别表示，以l为左端点的最大子序和，以r为右端点的最大子序和，
+        // mSum表示区间[l,r]最大子序和
+        //iSum表示区间和
+    };
+
+    Status get(vector<int> nums,int  l,int  r)
+    {
+        if(l==r) return (Status){nums[l],nums[l],nums[l],nums[l]};
+        int m = (l+r)>>1;
+        Status lpus = get(nums,l,m);
+        Status rpus = get(nums,m+1,r);
+        int lSum = max(lpus.lSum, lpus.iSum + rpus.lSum);
+        int rSum = max(rpus.rSum, rpus.iSum + lpus.rSum);
+        int iSum = lpus.iSum + rpus.iSum;
+        int mSum = max(lpus.rSum+ rpus.lSum,max(lpus.mSum, rpus.mSum));
+        return (Status){lSum,rSum,mSum,iSum}; 
+
+    }
+    int maxSubArray(vector<int>& nums) {
+        if(!nums.size()) return 0;
+        return get(nums, 0 , nums.size()-1).mSum;
+    }
+
+
+
+```
+
+然后我们分析一下时间和空间复杂度。
+
+时间复杂度：$$O(n)$$，我们把递归过程看成二叉树的先序遍历，那么这颗二叉树时间复杂度：假设我们把递归的过程看作是一颗二叉树的先序遍历，那么这颗二叉树的深度的渐进上界为 $$O(\log n)$$，这里的总时间相当于遍历这颗二叉树的所有节点，故总时间的渐进上界是 $$O(\sum_{i = 1}^{\log n} 2^{i - 1}) = O(n)$$，故渐进时间复杂度为 $$O(n)$$。
+空间复杂度：递归会使用 O(\log n)O(logn) 的栈空间，故渐进空间复杂度为 $$O(logn)$$。 
+
+# 315. [计算右侧小于当前元素的个数](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/)
+
+给定一个整数数组 nums，按要求返回一个新数组 counts。数组 counts 有该性质： counts[i] 的值是  nums[i] 右侧小于 nums[i] 的元素的数量。
+
+ 
+
+示例：
+
+```
+输入：[5,2,6,1]
+输出：[2,1,1,0] 
+解释：
+5 的右侧有 2 个更小的元素 (2 和 1)
+2 的右侧仅有 1 个更小的元素 (1)
+6 的右侧有 1 个更小的元素 (1)
+1 的右侧有 0 个更小的元素
+```
+
+
+
+---
 
 ``` cpp
 #include <iostream>
