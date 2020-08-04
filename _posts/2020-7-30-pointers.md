@@ -1,4 +1,4 @@
-```
+---
 layout:     post
 title:      "多指针问题"
 subtitle:   " \"Multiple Pointers\""
@@ -10,7 +10,9 @@ catalog: true
 tags:
     - 多指针
     - 算法
-```
+---
+
+
 
 
 

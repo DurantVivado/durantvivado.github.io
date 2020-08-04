@@ -1,3 +1,19 @@
+---
+layout:     post
+title:      "多指针问题"
+subtitle:   " \"Multiple Pointers\""
+date:       2020-07-19 15:56:27
+author:     "Durant"
+latex: true
+header-img: "img/post-bg-geek.jpg"
+catalog: true
+tags:
+    - 多指针
+    - 算法
+---
+
+
+
 # 排序算法汇总
 
 

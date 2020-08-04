@@ -1,4 +1,4 @@
-```
+---
 layout:     post
 title:      "解空间极大问题通用策略"
 subtitle:   " \"Giant Solution Space\""
@@ -10,7 +10,9 @@ catalog: true
 tags:
     - 算法
     - 通用策略
-```
+---
+
+
 
 
 

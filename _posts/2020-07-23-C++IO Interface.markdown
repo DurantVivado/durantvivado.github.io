@@ -1,6 +1,18 @@
-```
+---
+layout:     post
+title:      "C++ IO库"
+subtitle:   " \"C++ IO interface\""
+date:       2020-05-10 13:23:45
+author:     "Durant"
+latex: true
+header-img: "img/post-bg-geek.jpg"
+catalog: true
+tags:
+   - C++
 
-```
+---
+
+
 
 > 参考资料：C++ Primer（5th Edition）
 

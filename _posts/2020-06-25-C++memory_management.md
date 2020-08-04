@@ -1,3 +1,18 @@
+---
+layout:     post
+title:      "C++内存管理"
+subtitle:   " \"C++ Memory management\""
+date:       2020-06-25 13:23:45
+author:     "Durant"
+latex: true
+header-img: "img/post-bg-o.jpg"
+catalog: true
+tags:
+   - C++
+---
+
+
+
 # C++内存管理
 
 > 内存管理是非常让人头疼的事情，因为一不小心就可能导致内存泄漏，为此很多C++程序员跑路到java或python，？？？但是反过来说，优秀的程序员知道如何管理内存，并显式获得速度的飞跃。

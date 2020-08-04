@@ -1,4 +1,4 @@
-```
+---
 layout:     post
 title:      "图的几种表示方法"
 subtitle:   " \"Graphs\""
@@ -10,7 +10,9 @@ catalog: true
 tags:
     - 图论
     - 算法
-```
+---
+
+
 
 # 图的几种表示方法
 

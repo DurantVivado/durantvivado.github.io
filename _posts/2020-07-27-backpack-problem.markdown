@@ -1,4 +1,4 @@
-```
+---
 layout:     post
 title:      "背包问题"
 subtitle:   " \"Bag Problem\""
@@ -9,7 +9,9 @@ header-img: "img/post-bg-art.jpg"
 catalog: true
 tags:
    - 动态规划
-```
+---
+
+
 
 # 1. 背包问题
 
