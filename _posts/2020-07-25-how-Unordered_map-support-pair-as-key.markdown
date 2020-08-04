@@ -39,7 +39,7 @@ struct pair_hash//没这个pair 就不能在unorder——map快乐的玩耍了
 
 然后用的话就根据需要，正常操作了。
 
-```
+```C++
 unordered_map<pair<int,int>,double,pair_hash<int,int>,pair_hash<int,int>> minDis;
    minDis.insert({{1,2}, 1.5});
 ```
