@@ -2,7 +2,7 @@
 layout:     post
 title:      "滑动窗口法"
 subtitle:   " \"Sliding Windows\""
-date:       2020-08-1 
+date:       2020-08-1 14:27:56 
 author:     "Durant"
 latex: true
 header-img: "img/post-bg-2015.jpg"
