@@ -40,7 +40,28 @@ tags:
     <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML">
     </script>
 {% endif %}
-``` 
+```
 
 4. 之前以为是C++，改成cpp就能高亮了，呃
-    
+   
+
+
+
+# I want more
+
+作为一个前端，后端小白，还是很想扩展一下博客的功能的····，满足自己的装bei心里。
+
+1. 加入评论功能
+2. 统计访问量
+3. 为博客加入点赞功能
+4. 花里胡哨的功能
+
+
+
+
+
+1. 博客搜索
+2. 博客置顶
+3. 访问加速
+4. 访客限制
+5. （高级）在网站上直接post&push
