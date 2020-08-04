@@ -31,6 +31,9 @@ struct pair_hash//没这个pair 就不能在unorder——map快乐的玩耍了
         return equal_to<T1>()(lhs.first,rhs.first) && equal_to<T2>()(lhs.second,rhs.second);
     }
 };
+//使用
+unordered_map<pair<int,int>,double,pair_hash<int,int>,pair_hash<int,int>> minDis;
+   minDis.insert({{1,2}, 1.5});
 ```
 
 ![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
@@ -38,11 +41,6 @@ struct pair_hash//没这个pair 就不能在unorder——map快乐的玩耍了
 像python那样将任何对象变为dict的键值，C++把原有的hash函数删去了（处于性能考虑 )，所以要自己写。
 
 然后用的话就根据需要，正常操作了。
-
-```C++
-unordered_map<pair<int,int>,double,pair_hash<int,int>,pair_hash<int,int>> minDis;
-   minDis.insert({{1,2}, 1.5});
-```
 
 ![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
 
