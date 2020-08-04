@@ -33,7 +33,7 @@ struct pair_hash//没这个pair 就不能在unorder——map快乐的玩耍了
 };
 //使用
 unordered_map<pair<int,int>,double,pair_hash<int,int>,pair_hash<int,int>> minDis;
-   minDis.insert({{1,2}, 1.5});
+   minDis.insert(pair<int,int>({1,2},1.5));
 ```
 
 ![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
