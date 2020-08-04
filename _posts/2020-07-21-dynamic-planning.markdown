@@ -324,7 +324,7 @@ dp[i-1][j]\ || \ dp[i][j-2], \ matches(s[i],p[j-1])
 \\
 dp[i][j-2], otherwise
 \end{cases}
-\end{cases}
+\end{cases}
 $$
 
 其中$$ \textit{matches}(x, y)$$ 判断两个字符是否匹配的辅助函数。只有当 y 是 `.` 或者 x 和 y 本身相同时，这两个字符才会匹配。
@@ -518,3 +518,62 @@ bool isMatch(string s, string p)
 空间复杂度:$$O(NM)$$ $$N和M$$分别表示目标串和模式串的长度。我们可以使用`滚动数组`对空间进行优化，即用两个长度为 $$n+1$$ 的一维数组代替整个二维数组进行状态转移，空间复杂度为$$ O(n)$$。
 
 当然这题也有贪心解法，我们专门放在[[深入剖析贪心算法]()]去讲。
+
+
+
+# 72 [编辑距离](https://leetcode-cn.com/problems/edit-distance/)
+
+这一题在LC上属于难题分类，但实际上通过率高达59.6%，是一道名副其实的`Easy`题。
+
+但是我们想说的dp千变万化，不离其宗。题目做多了自然就有想法了。
+
+给你两个单词 word1 和 word2，请你计算出将 word1 转换成 word2 所使用的最少操作数 。
+
+你可以对一个单词进行如下三种操作：
+
+1. 插入一个字符
+2. 删除一个字符
+3. 替换一个字符
+
+---
+
+我们用$$dp[i][j]$$表示word1前i个字符转换为word2前j个字符所需的`最小`操作数。 
+
+然后在word1插入一个字符相当于$$dp[i][j]=dp[i-1][j]+1$$，一定会多出来一个步骤。
+
+然后在word1删除一个字符相当于$$dp[i][j]=dp[i][j-1]+1$$，也一定会多出来一个步骤。
+
+如果word1最后一个字符通过替换得到word2，那么要分情况，如果最后一个字符相同，那么$$dp[i][j]=dp[i-1][j-1]$$，否则$$dp[i][j]=dp[i-1][j-1]+1$$.
+
+> 边界条件
+
+$$dp[0][j] = j,dp[i][0]=i$$
+
+就是完全的删除或者完全插入。
+
+代码C++
+
+```C++
+class Solution {
+public:
+    int minDistance(string word1, string word2) {
+        if(!word1.size()) return word2.size();
+        if(!word2.size()) return word1.size();
+        //dp[i][j]表示word1的前i位替换为word2前i位所需的最小步数
+        int m = word1.size(), n = word2.size();
+        vector<vector<int>> dp(m+1,vector<int>(n+1));
+        dp[0][0] = 0;
+        dp[1][1] = (word1[0]==word2[0])? 0:1;
+        for(int i = 1; i <=m ;i++) dp[i][0] = i;
+        for(int j = 1; j <=n ;j++) dp[0][j] = j;
+        for(int i = 1; i <=m; i++ )
+        for(int j = 1; j <=n; j++ )
+        {
+            int exchange = (word1[i-1]==word2[j-1])?dp[i-1][j-1]:dp[i-1][j-1]+1;
+            dp[i][j] = min(exchange, min(dp[i-1][j]+1,dp[i][j-1]+1));
+        }
+        return dp[m][n];
+    }
+};
+```
+

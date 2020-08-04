@@ -2,10 +2,10 @@
 layout:     post
 title:      "背包问题"
 subtitle:   " \"Bag Problem\""
-date:       2020-07-16 16:56:27
+date:       2020-07-27 
 author:     "Durant"
 latex: true
-header-img: "img/post-bg-o.jpg"
+header-img: "img/post-bg-art.jpg"
 catalog: true
 tags:
    - 动态规划

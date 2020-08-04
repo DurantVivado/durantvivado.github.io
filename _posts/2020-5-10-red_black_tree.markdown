@@ -1,15 +1,15 @@
 ```
 layout:     post
-title:      "如何让Unordered_map支持pair作为键值"
+title:      "全手写实现红黑树"
 subtitle:   " \"Pair as key of unordered_map\""
-date:       2020-07-16 16:56:27
+date:       2020-05-10 
 author:     "Durant"
 latex: true
 header-img: "img/post-bg-o.jpg"
 catalog: true
 tags:
-   - C++
-   - 实用用技巧
+   - 平衡树
+   - 经典数据结构
 ```
 
 一提到红黑树，你应该是这样想的。。。
