@@ -1,4 +1,4 @@
-```
+---
 layout:     post
 title:      "全手写实现红黑树"
 subtitle:   " \"Pair as key of unordered_map\""
@@ -10,7 +10,9 @@ catalog: true
 tags:
    - 平衡树
    - 经典数据结构
-```
+---
+
+
 
 一提到红黑树，你应该是这样想的。。。
 
