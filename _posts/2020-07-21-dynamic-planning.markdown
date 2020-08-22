@@ -20,9 +20,41 @@ tags:
 然后，现在我们干一件事情，把DP题目罗列出来，找到共同点，未来我们要做到看一眼题目就知道用什么方法。
 下面摘至[Huahua's problem set](http://zxi.mytechroad.com/blog/leetcode-problem-categories/?from=singlemessage). 
 
+---
+
+70. [爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/) (Easy)
+
+746. [使用最小花费爬楼梯](https://leetcode-cn.com/problems/min-cost-climbing-stairs/) (Easy)
+
+198. [打家劫舍](https://leetcode-cn.com/problems/house-robber/)(Easy)
+
+64. [最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/)(Medium)
+
+62. [不同路径](https://leetcode-cn.com/problems/unique-paths/)(Medium)
+
+63. [不同路径2](https://leetcode-cn.com/problems/unique-paths-ii/)(Medium)
+
+96.[不同的搜索二叉树](https://leetcode-cn.com/problems/unique-binary-search-trees/)(Medium)
+
+221.[最大正方形](https://leetcode-cn.com/problems/maximal-square/)(medium)
+
+53. [最大字序和](https://leetcode-cn.com/problems/maximum-subarray/solution/zui-da-zi-xu-he-by-leetcode-solution/)(Easy)
+    139. [单词拆分(Medium)](https://leetcode-cn.com/problems/word-break/solution/)
+
+152. [乘积最大子数组(Medium)](https://leetcode-cn.com/problems/maximum-product-subarray)
+
+53. [分割数组的最大和](https://leetcode-cn.com/problems/split-array-largest-sum/)(Hard)
+
+10.[正则表达式匹配](https://leetcode-cn.com/problems/regular-expression-matching/)(Hard)
+
+44. [通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/)(Hard)
+
+72 [编辑距离](https://leetcode-cn.com/problems/edit-distance/)(Hard)
+
+
+
 <div id="sheets-viewport"> <div dir="ltr" id="1674276502" style=""> <div class="ritz grid-container" dir="ltr"> <table cellpadding="0" cellspacing="0" class="waffle"> <thead> <tr> <th class="row-header freezebar-origin-ltr header-shim row-header-shim"> </th> <th class="header-shim" id="1674276502C0" style="width:36px"> </th> <th class="header-shim" id="1674276502C1" style="width:187px"> </th> <th class="header-shim" id="1674276502C2" style="width:72px"> </th> <th class="header-shim" id="1674276502C3" style="width:50px"> </th> <th class="header-shim" id="1674276502C4" style="width:50px"> </th> <th class="header-shim" id="1674276502C5" style="width:50px"> </th> <th class="header-shim" id="1674276502C6" style="width:50px"> </th> <th class="header-shim" id="1674276502C7" style="width:50px"> </th> <th class="header-shim" id="1674276502C8" style="width:197px"> </th> </tr> </thead> <tbody> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R0" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 1 </div> </th> <td class="s84" dir="ltr"> Id </td> <td class="s85" dir="ltr"> Name </td> <td class="s86" dir="ltr"> Difficulty </td> <td class="s86" colspan="5" dir="ltr"> Similar Problems </td> <td class="s87" dir="ltr"> Comments </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R1" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 2 </div> </th> <td class="s84" dir="ltr"> 70 </td> <td class="s88" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-70-climbing-stairs/"> Climbing Stairs </a> </td> <td class="s86" dir="ltr"> ★ </td> <td class="s89" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-746-min-cost-climbing-stairs/"> 746 </a> </td> <td class="s89" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-1137-n-th-tribonacci-number/"> 1137 </a> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s90" dir="ltr" rowspan="3"> I: O(n), S = O(n), T = O(n) </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R2" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 3 </div> </th> <td class="s84" dir="ltr"> 303 </td> <td class="s88" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-303-range-sum-query-immutable/"> Range Sum Query – Immutable </a> </td> <td class="s86" dir="ltr"> ★ </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-1218-longest-arithmetic-subsequence-of-given-difference/"> 1218 </a> </td> <td class="s84" dir="ltr"> </td> <td class="s84" dir="ltr"> </td> <td class="s84" dir="ltr"> </td> <td class="s84" dir="ltr"> </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R3" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 4 </div> </th> <td class="s84" dir="ltr"> 53 </td> <td class="s88" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-53-maximum-subarray/"> Maximum Subarray </a> </td> <td class="s86" dir="ltr"> ★★ </td> <td class="s89" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-121-best-time-to-buy-and-sell-stock/"> 121 </a> </td> <td class="s84" dir="ltr"> </td> <td class="s84" dir="ltr"> </td> <td class="s84" dir="ltr"> </td> <td class="s84" dir="ltr"> </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R4" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 5 </div> </th> <td class="s92" dir="ltr" rowspan="2"> 62 </td> <td class="s93" dir="ltr" rowspan="2"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-62-unique-paths/"> Unique Paths </a> </td> <td class="s94" dir="ltr" rowspan="2"> ★★ </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-63-unique-paths-ii/"> 63 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-64-minimum-path-sum/"> 64 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-120-triangle/"> 120 </a> </td> <td class="s95" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-174-dungeon-game/"> 174 </a> </td> <td class="s95" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-931-minimum-falling-path-sum/"> 931 </a> </td> <td class="s90" dir="ltr" rowspan="3"> I: O(mn), S = O(mn), T = O(mn) </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R5" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 6 </div> </th> <td class="s95" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/searching/leetcode-1210-minimum-moves-to-reach-target-with-rotations/"> 1210 </a> </td> <td class="s84" dir="ltr"> </td> <td class="s84" dir="ltr"> </td> <td class="s84" dir="ltr"> </td> <td class="s84" dir="ltr"> </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R6" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 7 </div> </th> <td class="s84" dir="ltr"> 85 </td> <td class="s88" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-85-maximal-rectangle/"> Maximal Rectangle </a> </td> <td class="s86" dir="ltr"> ★★★ </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-304-range-sum-query-2d-immutable/"> 221 </a> </td> <td class="s89" dir="ltr"> <a href="https://leetcode.com/problems/range-sum-query-2d-immutable"> 304 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-1277-count-square-submatrices-with-all-ones/"> 1277 </a> </td> <td class="s84"> </td> <td class="s84"> </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R7" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 8 </div> </th> <td class="s84" dir="ltr"> 198 </td> <td class="s88" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-198-house-robber/"> House Robber </a> </td> <td class="s86" dir="ltr"> ★★★ </td> <td class="s91" dir="ltr"> <a href="https://leetcode.com/problems/house-robber-ii/"> 213 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-309-best-time-to-buy-and-sell-stock-with-cooldown/"> 309 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-740-delete-and-earn/"> 740 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-790-domino-and-tromino-tiling/"> 790 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-801-minimum-swaps-to-make-sequences-increasing/"> 801 </a> </td> <td class="s87" dir="ltr"> I: O(n), S = O(3n), T = O(3n) </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R8" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 9 </div> </th> <td class="s84" dir="ltr"> 279 </td> <td class="s88"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-279-perfect-squares/"> Perfect Squares </a> </td> <td class="s86" dir="ltr"> ★★★ </td> <td class="s87"> </td> <td class="s87"> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s87" dir="ltr"> I: n, S = O(n), T = O(n*sqrt(n)) </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R9" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 10 </div> </th> <td class="s84" dir="ltr"> 139 </td> <td class="s88" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/leetcode/leetcode-139-word-break/"> Word Break </a> </td> <td class="s86" dir="ltr"> ★★★ </td> <td class="s95" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/leetcode/leetcode-140-word-break-ii/"> 140 </a> </td> <td class="s95" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/searching/leetcode-818-race-car/"> 818 </a> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s90" dir="ltr" rowspan="3"> I: O(n), S = O(n), T = O(n^2) </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R10" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 11 </div> </th> <td class="s84" dir="ltr"> 300 </td> <td class="s88" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-300-longest-increasing-subsequence/"> Longest Increasing Subsequence </a> </td> <td class="s86" dir="ltr"> ★★★ </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-673-number-of-longest-increasing-subsequence/"> 673 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/leetcode/leetcode-weekly-contest-137/"> 1048 </a> </td> <td class="s84" dir="ltr"> </td> <td class="s84"> </td> <td class="s84"> </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R11" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 12 </div> </th> <td class="s84" dir="ltr"> 96 </td> <td class="s88" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-96-unique-binary-search-trees/"> Unique Binary Search Trees </a> </td> <td class="s86" dir="ltr"> ★★★ </td> <td class="s84" dir="ltr"> </td> <td class="s84" dir="ltr"> </td> <td class="s84" dir="ltr"> </td> <td class="s84" dir="ltr"> </td> <td class="s84" dir="ltr"> </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R12" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 13 </div> </th> <td class="s84" dir="ltr"> 1105 </td> <td class="s88" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-1105-filling-bookcase-shelves/"> Filling Bookcase Shelves </a> </td> <td class="s86" dir="ltr"> ★★★ </td> <td class="s84" dir="ltr"> </td> <td class="s84" dir="ltr"> </td> <td class="s84" dir="ltr"> </td> <td class="s84" dir="ltr"> </td> <td class="s84" dir="ltr"> </td> <td class="s96" dir="ltr"> <div class="softmerge-inner" style="width: 295px; left: -1px;"> I: O(n) + t, S = O(n), T = O(n^2) </div> </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R13" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 14 </div> </th> <td class="s84" dir="ltr"> 131 </td> <td class="s88" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/searching/leetcode-131-palindrome-partitioning/"> Palindrome Partitioning </a> </td> <td class="s86" dir="ltr"> ★★★ </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-89-gray-code/"> 89 </a> </td> <td class="s84" dir="ltr"> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s97" dir="ltr"> <div class="softmerge-inner" style="width: 295px; left: -1px;"> I: O(n), S = O(2^n), T = O(2^n) </div> </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R14" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 15 </div> </th> <td class="s92" dir="ltr" rowspan="2"> 72 </td> <td class="s93" dir="ltr" rowspan="2"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-72-edit-distance/"> Edit Distance </a> </td> <td class="s94" dir="ltr" rowspan="2"> ★★★ </td> <td class="s95" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/searching/leetcode-10-regular-expression-matching/"> 10 </a> </td> <td class="s95" dir="ltr"> <a href="https://leetcode.com/problems/wildcard-matching/"> 44 </a> </td> <td class="s95" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-97-interleaving-string/"> 97 </a> </td> <td class="s95" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-115-distinct-subsequences/"> 115 </a> </td> <td class="s91" dir="ltr"> <a href="https://leetcode.com/problems/delete-operation-for-two-strings/"> 583 </a> </td> <td class="s90" dir="ltr" rowspan="2"> I: O(m+n), S = O(mn), T = O(mn) </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R15" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 16 </div> </th> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-712-minimum-ascii-delete-sum-for-two-strings/"> 712 </a> </td> <td class="s95" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-1187-make-array-strictly-increasing/"> 1187 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-1143-longest-common-subsequence/"> 1143 </a> </td> <td class="s95" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-1092-shortest-common-supersequence/"> 1092 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-718-maximum-length-of-repeated-subarray/"> 718 </a> </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R16" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 17 </div> </th> <td class="s84" dir="ltr"> 1139 </td> <td class="s88" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-1139-largest-1-bordered-square/"> Largest 1-Bordered Square </a> </td> <td class="s86" dir="ltr"> ★★★ </td> <td class="s84" dir="ltr"> </td> <td class="s84" dir="ltr"> </td> <td class="s84" dir="ltr"> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s96" dir="ltr"> <div class="softmerge-inner" style="width: 295px; left: -1px;"> I: O(mn), S = O(mn) <br> T = O(mn*min(n,m)) </div> </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R17" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 18 </div> </th> <td class="s84" dir="ltr"> 688 </td> <td class="s88" dir="ltr"> <a href="https://leetcode.com/problems/knight-probability-in-chessboard/"> Knight Probability in Chessboard </a> </td> <td class="s86" dir="ltr"> ★★★ </td> <td class="s91" dir="ltr"> <a href="https://leetcode.com/problems/out-of-boundary-paths/"> 576 </a> </td> <td class="s91" dir="ltr"> <a href="https://leetcode.com/problems/knight-dialer/"> 935 </a> </td> <td class="s84" dir="ltr"> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s97" dir="ltr"> <div class="softmerge-inner" style="width: 295px; left: -1px;"> I: O(mn) + k <br> S = O(kmn), T = O(kmn) </div> </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R18" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 19 </div> </th> <td class="s92" dir="ltr" rowspan="2"> 322 </td> <td class="s93" dir="ltr" rowspan="2"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-322-coin-change/"> Coin Change </a> </td> <td class="s94" dir="ltr" rowspan="2"> ★★★ </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-377-combination-sum-iv/"> 377 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-416-partition-equal-subset-sum/"> 416 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-494-target-sum/"> 494 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-1043-partition-array-for-maximum-sum/"> 1043 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/leetcode/leetcode-weekly-contest-137/"> 1049 </a> </td> <td class="s90" dir="ltr" rowspan="2"> I: O(n) + k, S = O(n), T = O(kn) </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R19" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 20 </div> </th> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-1220-count-vowels-permutation/"> 1220 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-1230-toss-strange-coins/"> 1230 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-1262-greatest-sum-divisible-by-three/"> 1262 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-1269-number-of-ways-to-stay-in-the-same-place-after-some-steps/"> 1269 </a> </td> <td class="s84" dir="ltr"> </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R20" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 21 </div> </th> <td class="s84" dir="ltr"> 813 </td> <td class="s88" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-813-largest-sum-of-averages/"> Largest Sum of Averages </a> </td> <td class="s86" dir="ltr"> ★★★★ </td> <td class="s95" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-1278-palindrome-partitioning-iii/"> 1278 </a> </td> <td class="s95" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-1335-minimum-difficulty-of-a-job-schedule/"> 1335 </a> </td> <td class="s95" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-410-split-array-largest-sum/"> 410 </a> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s97" dir="ltr"> <div class="softmerge-inner" style="width: 295px; left: -1px;"> I: O(n) + k <br> S = O(n*k), T = O(kn^2) </div> </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R21" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 22 </div> </th> <td class="s84" dir="ltr"> 1223 </td> <td class="s88" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-1223-dice-roll-simulation/"> Dice Roll Simulation </a> </td> <td class="s86" dir="ltr"> ★★★★ </td> <td class="s98"> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s97" dir="ltr"> <div class="softmerge-inner" style="width: 295px; left: -1px;"> I: O(n) + k + p <br> S = O(k*p), T = O(n^2kp) </div> </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R22" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 23 </div> </th> <td class="s84" dir="ltr"> 312 </td> <td class="s88" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-312-burst-balloons/"> Burst Balloons </a> </td> <td class="s86" dir="ltr"> ★★★★ </td> <td class="s95" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-664-strange-printer/"> 664 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/leetcode/leetcode-weekly-contest-131-1021-1022-1023-1024/"> 1024 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/leetcode/leetcode-weekly-contest-135-1037-1038-1039-1040/"> 1039 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/recursion/leetcode-1140-stone-game-ii/"> 1140 </a> </td> <td class="s91" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/1130-minimum-cost-tree-from-leaf-values/"> 1130 </a> </td> <td class="s97" dir="ltr"> <div class="softmerge-inner" style="width: 295px; left: -1px;"> I: O(n), S = O(n^2), T = O(n^3) </div> </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R23" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 24 </div> </th> <td class="s84" dir="ltr"> 741 </td> <td class="s88" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-741-cherry-pickup/"> Cherry Pickup </a> </td> <td class="s86" dir="ltr"> ★★★★ </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s97" dir="ltr"> <div class="softmerge-inner" style="width: 295px; left: -1px;"> I: O(n^2), S = O(n^3), T = O(n^3) </div> </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R24" style="height: 20px;"> <div class="row-header-wrapper" style="line-height: 20px;"> 25 </div> </th> <td class="s84" dir="ltr"> 546 </td> <td class="s88" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-546-remove-boxes/"> Remove Boxes </a> </td> <td class="s86" dir="ltr"> ★★★★★ </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s97" dir="ltr"> <div class="softmerge-inner" style="width: 295px; left: -1px;"> I: O(n), S = O(n^3), T = O(n^4) </div> </td> </tr> <tr style="height:20px;"> <th class="row-headers-background row-header-shim" id="1674276502R25" style="height: 20px;"> 
 <div class="row-header-wrapper" style="line-height: 20px;"> 26 </div> </th> <td class="s84" dir="ltr"> 943 </td> <td class="s88" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/searching/leetcode-943-find-the-shortest-superstring/"> Find the Shortest Superstring </a> </td> <td class="s86" dir="ltr"> ★★★★★ </td> <td class="s95" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/searching/leetcode-980-unique-paths-iii/"> 980 </a> </td> <td class="s95" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/searching/leetcode-996-number-of-squareful-arrays/"> 996 </a> </td> <td class="s95" dir="ltr"> <a href="https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-1125-smallest-sufficient-team/"> 1125 </a> </td> <td class="s84"> </td> <td class="s84"> </td> <td class="s97" dir="ltr"> <div class="softmerge-inner" style="width: 295px; left: -1px;"> I: O(n) <br> S = O(n*2^n), T = (n^2*2^n) 
-
 </div> </td> </tr>
  </tbody> </table> </div> </div> </div>
 
@@ -52,6 +84,19 @@ $$
 边界条件: $$dp[0] = 0, dp[1]=0$$
 
 **总结，这两题能这么做是因为，它们相邻两项的间距是恒定的要么为1，要么为2.**
+
+
+
+## 198. [打家劫舍](https://leetcode-cn.com/problems/house-robber/)
+
+> 老dp了，还贪讷
+
+一眼看上去以为是跳跃游戏类似的贪心算法，没想到是老dp换了层皮。
+
+以$dp[i]$表示前ii个元素中最大金额。
+我们这样想，第$i-1$个元素$nums[i-1]$是否取到取决于前面一个元素是否取，如果前一个元素不取就是$dp[i-2]+nums[i-1]$，如果前一个元素取到就是$dp[i-1]$。
+
+边值条件$dp[0]=0,dp[1]=nums[0]$，注意下标对应关系。
 
 ---
 再看跟路径有关的问题
@@ -121,11 +166,66 @@ $$
 
 **总结，因为路径问题只能向下或向右走和爬楼梯的只能走一步或者两步都是异曲同工的，把状态转移方程和边界条件想出来有助于快速解决问题**
 
+> 此外，涉及到求规律的问题，一般先列出几项再使用dp
 
+## 96. 不同的搜索二叉树
+
+给定一个整数 n，求以 1 ... n 为节点组成的二叉搜索树有多少种？
+
+示例:
+
+```
+输入: 3
+输出: 5
+解释:
+给定 n = 3, 一共有 5 种不同结构的二叉搜索树:
+
+   1         3     3      2      1
+    \       /     /      / \      \
+     3     2     1      1   3      2
+    /     /       \                 \
+   2     1         2                 3
+```
+
+$$
+f[i] = \begin{cases}
+2×(f[i-1]+···+f[(i-1)/2])+f[i/2]^2,i为奇数\\
+2×(f[i-1]+···+f[(i-1)/2])，i为偶数\\
+\end{cases}
+$$
+
+---
+
+事实上我们在方法一中推导出的 $G(n)$函数的值在数学上被称为卡塔兰数 $C_n $
+
+ 。卡塔兰数更便于计算的定义如下:$C_0 = 1, \qquad C_{n+1} = \frac{2(2n+1)}{n+2}C_n$,证明过程可以参考上述文献，此处不再赘述。
 
 > 下面我们看一些富有技巧而实际很简单 的dp问题
 
-# 53. [最大字序和](https://leetcode-cn.com/problems/maximum-subarray/solution/zui-da-zi-xu-he-by-leetcode-solution/)
+## 221. 最大正方形
+
+在一个由 0 和 1 组成的二维矩阵内，找到只包含 1 的最大正方形，并返回其面积。
+
+示例:
+
+```
+输入: 
+
+1 0 1 0 0
+1 0 1 1 1
+1 1 1 1 1
+1 0 0 1 0
+
+输出: 4
+```
+
+扩展85.最大矩形
+
+---
+
+
+
+## 53. [最大字序和](https://leetcode-cn.com/problems/maximum-subarray/solution/zui-da-zi-xu-he-by-leetcode-solution/)
 
 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
 
@@ -157,7 +257,76 @@ $$dp[0] = 0$$
 
 此外还可以用滚动数组降低空间复杂度。
 
+## 139.单词拆分
 
+给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，判定 s 是否可以被空格拆分为一个或多个在字典中出现的单词。
+
+说明：
+
+拆分时可以重复使用字典中的单词。
+你可以假设字典中没有重复的单词。
+示例 1：
+
+```
+输入: s = "leetcode", wordDict = ["leet", "code"]
+输出: true
+解释: 返回 true 因为 "leetcode" 可以被拆分成 "leet code"。 
+```
+
+---
+
+这一题可以正好填补一些我们思路上的空白。即，动态规划的迭代并不一定是连续的，很有可能存在跳跃。
+
+用$dp[i]$表示s前i个字符能否由字典中单词组成。那么$dp[i]=dp[j]\ \text{and}\  dict.check(s.substr(j,i-j));$，check在这里检查$s[j:i-1]$与字典中某一个单词匹配。初始条件为$dp[0]=true$空字符一定匹配，实际上，dp中大部分元素都是$false$。
+
+
+
+## 152. 乘积最大子数组
+
+
+
+给你一个整数数组 nums ，请你找出数组中乘积最大的连续子数组（该子数组中至少包含一个数字），并返回该子数组所对应的乘积。
+
+ 
+
+示例 1:
+
+```
+输入: [2,3,-2,4]
+输出: 6
+解释: 子数组 [2,3] 有最大乘积 6。
+
+```
+
+示例 2:
+
+```
+输入: [-2,0,-1]
+输出: 0
+解释: 结果不能为 2, 因为 [-2,-1] 不是子数组。
+```
+
+---
+
+这道题我们很容易陷入惯性思维，与最大子序和相似，我们可以设定$dp[i]$为以$nums[i-1]$为末尾的最大乘积，很容易知道 
+$$
+dp[i]=max\{dp[i-1]*nums[i-1],nums[i-1]\}
+$$
+但是这一题与53不同的是，负负得正，比如$[-9,1,-8]$得到最大和是72而不是1. 所以我们需要分类讨论，$num[i-1]$正负性，还要设计一个求最小积的$mdp[i]$，与求最大积$Mdp[i]$相对，具体如下：
+$$
+Mdp=\begin{cases}
+	\max\{Mdp[i-1]*nums[i-1],nums[i-1]\},nums[i-1]>0\\
+	\max\{mdp[i-1]*nums[i-1],nums[i-1]\},otherwise\\
+	\end{cases}\\
+	\\\
+	\\\ 
+	\\\
+mdp=\begin{cases}
+	\min\{mdp[i-1]*nums[i-1],nums[i-1]\},nums[i-1]>0\\
+	\min\{Mdp[i-1]*nums[i-1],nums[i-1]\},otherwise\\
+	\end{cases}
+$$
+初始条件$mdp[1]=nums[0],Mdp[1]=nums[0].$
 
 ---
 >下面我们看一些复杂的DP问题。
